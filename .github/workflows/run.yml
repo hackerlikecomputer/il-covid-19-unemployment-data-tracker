@@ -1,7 +1,7 @@
 name: fetch-ides-latest
 on:
   schedule:
-    - cron: "0 17 * * *"
+    - cron: "0 17 * * 4"
   workflow_dispatch:
     inputs:
 env:
