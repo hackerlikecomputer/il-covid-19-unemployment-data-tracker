@@ -34,11 +34,13 @@ jobs:
           git config --local user.name "GitHub Action"
           git add output/
           git commit -m "Add data for $DATE"
+        continue-on-error: true
       - name: push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
+        continue-on-error: true
       - name: force datawrapper refresh
         run: |
           python src/update_graphics.py
