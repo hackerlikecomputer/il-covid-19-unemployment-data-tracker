@@ -20,6 +20,9 @@ pandemic_industry_totals = (
     .groupby("industry")[["layoff_events", "initial_claims"]]
     .sum()
 )
+pandemic_industry_totals = pandemic_industry_totals[
+    pandemic_industry_totals.layoff_events > 0
+]
 pandemic_industry_totals.to_csv(
     "output/ides_total_layoff_events_by_industry_from_mar20.csv"
 )
