@@ -9,7 +9,7 @@ dw_api_token = os.getenv("DATAWRAPPER_API_TOKEN")
 assert dw_api_token, "couldn't locate datawrapper api token"
 dw = Datawrapper(access_token=dw_api_token)
 
-charts = ["XZM6e"]
+charts = ["7GeOB", "N9Gsl"]
 
 for chart_id in charts:
     resp = dw.refresh_data(chart_id)
