@@ -1,7 +1,7 @@
-name: fetch-ides-latest
+name: fetch-layoffs-daily
 on:
   schedule:
-    - cron: "0 17 * * 4"
+    - cron: "0 17 * * *"
   workflow_dispatch:
     inputs:
 env:
@@ -27,18 +27,20 @@ jobs:
           echo "DATE=$(python -c 'import datetime as dt; print(dt.datetime.now().date())')" >> $GITHUB_ENV
       - name: run scraper
         run: |
-          python src/scrapers/get_weekly_claims.py
+          python src/scrapers/get_mass_layoffs.py
       - name: commit files
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add output/
+          git add output/d
           git commit -m "Add data for $DATE"
+        continue-on-error: true
       - name: push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
+        continue-on-error: true
       - name: force datawrapper refresh
         run: |
           python src/update_graphics.py
