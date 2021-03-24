@@ -1,4 +1,14 @@
 industry,date,layoff_events,initial_claims
+Agricultural Services,2021-02-01,0.0,0.0
+Mining,2021-02-01,0.0,0.0
+Construction,2021-02-01,4.0,285.0
+Manufacturing,2021-02-01,14.0,4188.0
+Wholesale Trade,2021-02-01,0.0,0.0
+Retail Trade,2021-02-01,14.0,1436.0
+"Transportation, Warehousing, Utilities",2021-02-01,4.0,477.0
+Financial Activities,2021-02-01,3.0,189.0
+Professional & Business Services,2021-02-01,7.0,532.0
+Educational and Health Services,2021-02-01,3.0,272.0
 Agricultural Services,2021-01-01,0.0,0.0
 Mining,2021-01-01,0.0,0.0
 Construction,2021-01-01,10.0,628.0
